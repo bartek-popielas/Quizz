@@ -5,6 +5,7 @@ import { GlobalStyles } from "./assets/styles/globalStyles";
 import Container from "./Components/container/container"
 import Header from "./containers/header/header";
 import Button from "./Components/button/button";
+import Content from "./containers/content/content";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <GlobalStyles/>
         <Container>
             <Header/>
-            <Button/>
+            <Content/>
+
         </Container>
 
 
