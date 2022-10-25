@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import {Colors} from "../../assets/styles/theme";
 
 export const StyledButton = styled.button`
   margin: 20px 0;
-  background: orange;
+  background: ${Colors.primary};
   width: 200px;
   height: 50px;
   color: white;

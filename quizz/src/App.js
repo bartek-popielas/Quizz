@@ -4,8 +4,8 @@ import React, { Fragment } from "react";
 import { GlobalStyles } from "./assets/styles/globalStyles";
 import Container from "./Components/container/container"
 import Header from "./containers/header/header";
-import Button from "./Components/button/button";
 import Content from "./containers/content/content";
+import StepInfo from "./containers/stepInfo/stepInfo";
 
 function App() {
   return (
@@ -14,12 +14,8 @@ function App() {
         <Container>
             <Header/>
             <Content/>
-
+            <StepInfo/>
         </Container>
-
-
-
-
     </Fragment>
   );
 }
