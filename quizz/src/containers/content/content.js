@@ -1,35 +1,50 @@
 import { StyledContent } from './styles'
 import ContentPic from "../../assets/images/content_pic300.png";
 import Button from "../../Components/button/button";
-import { ContentImg } from "../content/styles";
-import { ContentP } from "../content/styles";
-import {useState} from "react";
+import { ContentImg, ContentP } from "./styles";
+import React from "react";
+import Select from "../../Components/select/select";
+import Header from "../header/header";
 
 
+export default function Content({ step, getChange }) {
 
-export default function Content() {
-    const [step, setStep] = useState(0);
 
-    const stepIncrement = () => {
-       setStep((prev) => prev + 1);
-    }
+        if(step === 1) {
+            return (
+                <StyledContent>
+                    <Header title={"Pozwól, że poznamy się lepiej.\n" +
+                        "                Chciałbym zadać Ci kilka\n" +
+                        "                pytań, dzięki którym dowiem\n" +
+                        "                się, co uszczęśliwia Cię\n" +
+                        "                najbardziej!"}/>
+                    <ContentImg src={ContentPic} alt="świeca w rękach"/>
+                    <ContentP>Poświęć mi zaledwie 2 minuty i
+                        odpowiadając na 5 pytań dowiedz się jakie zapachy są dla Ciebie!</ContentP>
+                    <Button title={"Zaczynamy"} step={step} getChange={getChange}/>
+                </StyledContent>
+            )
+        } else if(step === 2) {
+            return (
+                <StyledContent>
+                    <Header title={"1. Powiedz mi kim jesteś i jak masz na imię?"}/>
+                    <Select/>
+                    <Button title={"Zapytaj jeszcze o coś"} step={step} getChange={getChange}/>
+                </StyledContent>
+            )
+        } else if(step === 3) {
+            return (
+                <StyledContent>
+                    <Header title={"2. Jeśli możesz wyruszyć\n" +
+                        "w podróż gdziekolwiek\n" +
+                        "zechcesz. Jakie miejsce\n" +
+                        "wybierzesz?"}/>
+                    <Button title={"Jeszcze coś?"} step={step} getChange={getChange}/>
+                </StyledContent>
+            )
+        }
 
-    console.log(step);
 
-    if(step === 0) {
-        return (
-            <StyledContent>
-                <ContentImg src={ContentPic} alt="świeca w rękach"/>
-                <ContentP>Poświęć mi zaledwie 2 minuty i
-                    odpowiadając na 5 pytań dowiedz się jakie zapachy są dla Ciebie!</ContentP>
-                <Button getChange={stepIncrement}/>
-            </StyledContent>
-        )
-    } else if(step === 1) {
-        return (
-            <p>Siabadaba!</p>
-        )
-    }
 
 
 }

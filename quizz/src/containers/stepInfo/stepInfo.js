@@ -2,15 +2,16 @@ import {StyledStep, StyledStepInfo} from "./styles";
 
 
 
-export default function StepInfo() {
+export default function StepInfo({ step }) {
+
     return (
         <StyledStepInfo>
-            <StyledStep/>
-            <StyledStep/>
-            <StyledStep/>
-            <StyledStep/>
-            <StyledStep/>
-            <StyledStep/>
+            <StyledStep num={step}/>
+            <StyledStep num={step}/>
+            <StyledStep num={step}/>
+            <StyledStep num={step}/>
+            <StyledStep num={step}/>
+            <StyledStep num={step}/>
         </StyledStepInfo>
     )
 }

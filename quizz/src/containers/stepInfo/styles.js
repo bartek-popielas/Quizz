@@ -12,6 +12,7 @@ export const StyledStepInfo = styled.div`
   margin: 10px 0 0 0;
   padding: 0 5px;
 `
+
 export const StyledStep = styled.div`
   align-self: center;
   width: 20px;
@@ -19,9 +20,8 @@ export const StyledStep = styled.div`
   border: 1px black solid;
   border-radius: 50px;
 
-  &:nth-child(1) {
+  &:nth-child(${(props) => props.num}) {
     background: ${Colors.primary};
   }
 `
-
 

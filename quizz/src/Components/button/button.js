@@ -1,7 +1,7 @@
 import { StyledButton } from './styles'
 import {useContext, useState} from "react";
 
-export default function Button({ step, getChange }) {
+export default function Button({ title, step, getChange}) {
     const handleClick = () => {
         if(typeof getChange === "function") {
             getChange(step);
@@ -10,7 +10,7 @@ export default function Button({ step, getChange }) {
 
     return (
         <StyledButton onClick={() => handleClick()}>
-            Zaczynajmy!
+            {title}
         </StyledButton>
     )
 }
