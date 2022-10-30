@@ -1,6 +1,6 @@
-import { StyledHeader } from './styles'
-import { Img } from './styles'
-import { H2 } from './styles'
+import { StyledHeader } from './header.styles'
+import { Img } from './header.styles'
+import { H2 } from './header.styles'
 import LogoIcon from '../../assets/images/logo_jw10.png'
 
 export default function Header({ title }) {

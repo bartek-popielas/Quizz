@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "sex": "female",
+      "name": "Ania",
+      "age": "39",
+      "answers": {
+        "a": 2,
+        "b": 5,
+        "c": 1,
+        "d": 6,
+        "e": 2
+      },
+      "choosed": "e.target.value"
+    },
+    {
+      "id": 2,
+      "sex": "female",
+      "name": "Grażyna",
+      "age": "33",
+      "answers": {
+        "a": 1,
+        "b": 5,
+        "c": 1,
+        "d": 2,
+        "e": 3
+      },
+      "choosed": "e.target.value"
+    }
+  ]
+}

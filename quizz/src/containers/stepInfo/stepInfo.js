@@ -1,17 +1,23 @@
-import {StyledStep, StyledStepInfo} from "./styles";
+import {StyledStep, StyledStepInfo} from "./stepInfo.styles";
+import {useContext} from "react";
+import {StepContext} from "../../context/stepContext";
+
+export default function StepInfo() {
+
+    const { step } = useContext(StepContext);
+
+    const items = [];
+    for(let i = 0; i < 6; i++) {
+        items.push(<StyledStep key={ i + 1 } num={ step }/>)
+    }
 
 
-
-export default function StepInfo({ step }) {
 
     return (
         <StyledStepInfo>
-            <StyledStep num={step}/>
-            <StyledStep num={step}/>
-            <StyledStep num={step}/>
-            <StyledStep num={step}/>
-            <StyledStep num={step}/>
-            <StyledStep num={step}/>
+            {items.map((step) => {
+                return step;
+            })}
         </StyledStepInfo>
     )
 }

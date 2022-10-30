@@ -3,6 +3,9 @@ import { device } from "../../assets/styles/theme";
 
 export const StyledContent = styled.div`
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const ContentImg = styled.img`
@@ -10,8 +13,9 @@ export const ContentImg = styled.img`
 `;
 
 export const ContentP = styled.p`
-  margin: 0 55px;
+  text-align: center;
   font-weight: bold;
+  padding: 0 40px;
 
   @media ${device.tablet} {
     max-width: 350px;

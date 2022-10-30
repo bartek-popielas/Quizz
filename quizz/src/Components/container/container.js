@@ -1,4 +1,4 @@
-import { GlobalContainer } from './styles'
+import { GlobalContainer } from './container.styles'
 
 export default function Container({ children }) {
     return (
