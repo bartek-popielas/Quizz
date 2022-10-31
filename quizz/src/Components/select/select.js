@@ -1,15 +1,8 @@
 import {StyledLabel1, StyledInput1,} from './select.styles'
 import {Fragment, useState} from "react";
-import {
-    InputImg,
-    StyledItem,
-    StyledMyDiv,
-    StyledLabel,
-    StyledQuestionForm,
-    StyledQuestionInput
-} from "../questionSelect/questionSelect.styles";
+import { StyledQuestionForm } from "../questionSelect/questionSelect.styles";
 import { Data } from "../../assets/data/data";
-import FemaleIcon from "../../assets/images/female_icon.png";
+import Input from "../input/input";
 
 export default function Select() {
     const [select, setSelect] = useState("optionA");
@@ -25,21 +18,7 @@ export default function Select() {
 
                 {Data.sexInput.map((el) => {
                     return (
-                        <StyledLabel key={el.id} inputNum={select}>
-                            <StyledItem>
-                                <StyledQuestionInput
-                                    id={el.id}
-                                    type={el.type}
-                                    name={el.name}
-                                    value={el.value}
-                                    checked={select === el.id}
-                                    onChange={event => handleSelectChange(event)}/>
-
-                                <InputImg src={FemaleIcon} alt="logo_johnywick"/>
-                                <StyledMyDiv>{el.title}</StyledMyDiv>
-                            </StyledItem>
-                        </StyledLabel>
-
+                        <Input el={el} select={select} handleSelectChange={handleSelectChange}/>
                     )
                 })}
 

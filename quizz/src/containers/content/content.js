@@ -12,36 +12,83 @@ export default function Content() {
 
         const { step } = useContext(StepContext);
 
-        if(step === 1) {  //TODO SWITCH
-            return (
-                <StyledContent>
-                    <Header title={Data.view1.headerTitle}/>
-                    <ContentImg src={ContentPic} alt={Data.view1.imgAlt}/>
-                    <ContentP>{Data.view1.pText}</ContentP>
-                    <Button title={Data.view1.buttonTitle} />
-                </StyledContent>
-            )
-        } else if(step === 2) {
-            return (
-                <StyledContent>
-                    <Header title={"1. Powiedz mi kim jesteś i jak masz na imię?"}/>
-                    <Select/>
-                    <Button title={"Zapytaj jeszcze o coś"} />
-                </StyledContent>
-            )
-        } else if(step === 3) {
-            return (
-                <StyledContent>
-                    <Header title={"2. Jeśli możesz wyruszyć\n" +
-                        "w podróż gdziekolwiek\n" +
-                        "zechcesz. Jakie miejsce\n" +
-                        "wybierzesz?"}/>
-                    <QuestionSelect/>
-                    <Button title={"Jeszcze coś?"} />
+        const { headerTitle, imgAlt, pText, buttonTitle } = Data.view1;
+        const { headerTitle2, buttonTitle2 } = Data.view2;
+        const { headerTitle3, buttonTitle3 } = Data.view3;
+        const { headerTitle4, buttonTitle4 } = Data.view4;
+        const { headerTitle5, buttonTitle5 } = Data.view5;
+        const { headerTitle6, buttonTitle6 } = Data.view6;
+        const { headerTitle7, buttonTitle7 } = Data.view7;
 
-                </StyledContent>
-            )
+        switch(step) {
+            case 1:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle}/>
+                        <ContentImg src={ContentPic} alt={imgAlt}/>
+                        <ContentP>{pText}</ContentP>
+                        <Button title={buttonTitle} />
+                    </StyledContent>
+                )
+
+            case 2:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle2}/>
+                        <Select/>
+                        <Button title={buttonTitle2} />
+                    </StyledContent>
+                )
+
+            case 3:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle3}/>
+                        <QuestionSelect/>
+                        <Button title={buttonTitle3}/>
+                    </StyledContent>
+                )
+
+            case 4:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle4}/>
+                        <QuestionSelect/>
+                        <Button title={buttonTitle4} />
+                    </StyledContent>
+                )
+
+            case 5:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle5}/>
+                        <QuestionSelect/>
+                        <Button title={buttonTitle5} />
+                    </StyledContent>
+                )
+
+            case 6:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle6}/>
+                        <QuestionSelect/>
+                        <Button title={buttonTitle6} />
+                    </StyledContent>
+                )
+
+            case 7:
+                return (
+                    <StyledContent>
+                        <Header title={headerTitle7}/>
+                        <QuestionSelect/>
+                        <Button title={buttonTitle7}/>
+                    </StyledContent>
+                )
+            default:
+                alert("Something went wrong! Refresh!")
         }
+
+
 
 
 

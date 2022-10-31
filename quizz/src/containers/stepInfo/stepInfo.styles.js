@@ -5,7 +5,7 @@ export const StyledStepInfo = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 150px;
+  width: 200px;
   height: 40px;
   border: 1px black solid;
   border-radius: 10px;

@@ -7,7 +7,7 @@ export default function StepInfo() {
     const { step } = useContext(StepContext);
 
     const items = [];
-    for(let i = 0; i < 6; i++) {
+    for(let i = 0; i < 8; i++) {
         items.push(<StyledStep key={ i + 1 } num={ step }/>)
     }
 
