@@ -27,7 +27,7 @@ export const Data = {
         buttonTitle4: "Jeszcze coś?"
     },
     view5: {
-        headerTitle5: `4. Jak lubisz spędzać wolny czas?`,
+        headerTitle5: `4. Jaka jest Twoja ulubiona forma spędzania wolnego czasu?`,
         buttonTitle5: "Jeszcze coś?"
     },
     view6: {
@@ -40,42 +40,42 @@ export const Data = {
     },
 
     sexInput: [
-        {id: 1, type: "radio", name: "sex", value:"female", title: "Mężczyzna"},
-        {id: 2, type: "radio", name: "sex", value:"male", title: "Kobieta"}
+        {id: 1, type: "radio", name: "sex", value:"female", title: "Kobieta"},
+        {id: 2, type: "radio", name: "sex", value:"male", title: "Mężczyzna"}
     ],
     q1Inputs: [
-        {id: 1, type: "radio", name: "city", value:"a", title: "Paryż"},
-        {id: 2, type: "radio", name: "city", value:"b", title: "New York"},
-        {id: 3, type: "radio", name: "city", value:"c", title: "Bahama"},
-        {id: 4, type: "radio", name: "city", value:"d", title: "Bali"},
-        {id: 5, type: "radio", name: "city", value:"e", title: "Dom w lesie"},
+        {id: 1, type: "radio", name: "city", value: 5, title: "Paryż"},
+        {id: 2, type: "radio", name: "city", value: 5, title: "New York"},
+        {id: 3, type: "radio", name: "city", value: 5, title: "Bahama"},
+        {id: 4, type: "radio", name: "city", value: 5, title: "Bali"},
+        {id: 5, type: "radio", name: "city", value: 5, title: "Dom w lesie"},
     ],
     q2Inputs: [
-        {id: 1, type: "radio", name: "character", value:"a", title: "Romantyk"},
-        {id: 2, type: "radio", name: "character", value:"b", title: "Ekstrawertyk"},
-        {id: 3, type: "radio", name: "character", value:"c", title: "Optymista"},
-        {id: 4, type: "radio", name: "character", value:"d", title: "Myśliciel"},
-        {id: 5, type: "radio", name: "character", value:"e", title: "Wrażliwy"},
+        {id: 1, type: "radio", name: "character", value: 3, title: "Romantyk"},
+        {id: 2, type: "radio", name: "character", value: 3, title: "Ekstrawertyk"},
+        {id: 3, type: "radio", name: "character", value: 3, title: "Optymista"},
+        {id: 4, type: "radio", name: "character", value: 3, title: "Myśliciel"},
+        {id: 5, type: "radio", name: "character", value: 3, title: "Wrażliwy"},
     ],
     q3Inputs: [
-        {id: 1, type: "radio", name: "hobby", value:"a", title: "Książka"},
-        {id: 2, type: "radio", name: "hobby", value:"b", title: "Spotkanie na mieście"},
-        {id: 3, type: "radio", name: "hobby", value:"c", title: "Spacery"},
-        {id: 4, type: "radio", name: "hobby", value:"d", title: "Joga"},
-        {id: 5, type: "radio", name: "hobby", value:"e", title: "Praca w ogrodzie"},
+        {id: 1, type: "radio", name: "hobby", value: 2, title: "Książka"},
+        {id: 2, type: "radio", name: "hobby", value: 2, title: "Spotkanie na mieście"},
+        {id: 3, type: "radio", name: "hobby", value: 2, title: "Spacery"},
+        {id: 4, type: "radio", name: "hobby", value: 2, title: "Joga"},
+        {id: 5, type: "radio", name: "hobby", value: 2, title: "Praca w ogrodzie"},
     ],
     q4Inputs: [
-        {id: 1, type: "radio", name: "style", value:"a", title: "Trendy"},
-        {id: 2, type: "radio", name: "style", value:"b", title: "Glam"},
-        {id: 3, type: "radio", name: "style", value:"c", title: "Sportowiec"},
-        {id: 4, type: "radio", name: "style", value:"d", title: "Boho"},
-        {id: 5, type: "radio", name: "style", value:"e", title: "Minimalistyczny"},
+        {id: 1, type: "radio", name: "style", value: 2, title: "Trendy"},
+        {id: 2, type: "radio", name: "style", value: 2, title: "Glam"},
+        {id: 3, type: "radio", name: "style", value: 2, title: "Sportowiec"},
+        {id: 4, type: "radio", name: "style", value: 2, title: "Boho"},
+        {id: 5, type: "radio", name: "style", value: 2, title: "Minimalistyczny"},
     ],
     q5Inputs: [
-        {id: 1, type: "radio", name: "vibe", value:"a", title: "Przytulnie"},
-        {id: 2, type: "radio", name: "vibe", value:"b", title: "Energicznie"},
-        {id: 3, type: "radio", name: "vibe", value:"c", title: "Harmonijnie"},
-        {id: 4, type: "radio", name: "vibe", value:"d", title: "Odprężająco"},
-        {id: 5, type: "radio", name: "vibe", value:"e", title: "Spokojnie"},
+        {id: 1, type: "radio", name: "vibe", value: 1, title: "Przytulnie"},
+        {id: 2, type: "radio", name: "vibe", value: 1, title: "Energicznie"},
+        {id: 3, type: "radio", name: "vibe", value: 1, title: "Harmonijnie"},
+        {id: 4, type: "radio", name: "vibe", value: 1, title: "Odprężająco"},
+        {id: 5, type: "radio", name: "vibe", value: 1, title: "Spokojnie"},
     ],
 }

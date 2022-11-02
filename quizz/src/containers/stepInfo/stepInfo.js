@@ -8,7 +8,7 @@ export default function StepInfo() {
 
     const items = [];
     for(let i = 0; i < 8; i++) {
-        items.push(<StyledStep key={ i + 1 } num={ step }/>)
+        items.push(<StyledStep key={ "Step#" + i + 1 } num={ step }/>)
     }
 
 

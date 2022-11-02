@@ -6,12 +6,16 @@ import {
     StyledQuestionInput
 } from "./input.styles";
 import FemaleIcon from "../../assets/images/female_icon.png";
+import {useContext} from "react";
+import {StepContext} from "../../context/stepContext";
 
 
-export default function Input({ el, select, handleSelectChange }) {
+export default function Input({ el }) {
+
+    const { select, handleSelectChange } = useContext(StepContext);
 
     return (
-        <StyledLabel key={el.id} inputNum={select}>
+        <StyledLabel key={'Input#' + el.id} inputNum={select}>
             <StyledItem>
                 <StyledQuestionInput
                     id={el.id}
