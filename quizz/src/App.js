@@ -1,64 +1,51 @@
-import './App.css';
-import React from "react";
-import View from "./Components/views/view";
-import {useState, useEffect} from "react";
+import './App.css'
+import React from 'react'
+import View from './Components/views/view'
+import { useState, useEffect } from 'react'
+import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api'
 
-const url = "https://johnywick.pl/wp-json/wp/v2/product?categories=drzewne";
+// const api = new WooCommerceRestApi({
+//   url: 'https://johnywick.pl',
+//   consumerKey: 'ck_5717c4688a0d1fa3465d17508d77423d06d5c33d',
+//   consumerSecret: 'cs_d70676840ad919ff7ff716325933364c57e50f8f',
+//   version: 'wc/v3',
+// })
 
 function App() {
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = async () => {
-    const response = await fetch(url, {
-      method: "GET",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error("Unable to Retrieve Data. Please try again.");
-    }
-    return response.json();
-  };
+  const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetchProducts()
-        .then((data) => {
-          setProducts((products) => [...data]);
-        })
-        .catch((err) => {
-          console.error(err.message);
-        });
-  }, []);
+    let fetchProducts = async () => {
+      const response = await fetch('https://johnywick.pl/wp-json/wp/v2/product?categories=272')
+      const json = await response.json()
 
-  if (!products.length) {
-    return <div>loading</div>;
-  }
+      setProducts(json)
+    }
 
-
-  const items = products.map((prod) => (
-        <li key={prod.id}>
-          <h1>{prod.slug}</h1>
-
-        </li>
-
-
-
-  ));
-
-  products.map((item) => {
-    console.log(item);
-  })
+    fetchProducts().catch(err => console.log(err))
+  }, [])
 
   return (
-      <>
-        <View/>
-        <ul>{items}</ul>
-      </>
+    <>
+      <View />
+      {products && (
+        <div>
+          {products.map(product => {
+            // console.log(product)
+            const yoast = product.yoast_head_json
+            const image = yoast.og_image[0]
 
-
-  );
+            return (
+              <div key={yoast.title}>
+                <img src={image.url} alt='' />
+                <p>{yoast.title}</p>
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </>
+  )
 }
 
-export default App;
+export default App

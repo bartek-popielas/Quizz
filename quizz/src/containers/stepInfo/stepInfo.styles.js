@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {Colors} from "../../assets/styles/theme";
+import styled from 'styled-components'
+import { Colors } from '../../assets/styles/theme'
 
 export const StyledStepInfo = styled.div`
   display: flex;
@@ -19,9 +19,5 @@ export const StyledStep = styled.div`
   height: 20px;
   border: 1px black solid;
   border-radius: 50px;
-
-  &:nth-child(${(props) => props.num}) {
-    background: ${Colors.primary};
-  }
+  background: ${props => (props.num ? Colors.primary : 'transparent')};
 `
-
