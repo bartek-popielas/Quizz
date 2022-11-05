@@ -10,39 +10,43 @@ export default function View() {
   const [step, setStep] = useState(0)
   const [select, setSelect] = useState('')
   const [newUser, setNewUser] = useState({
-    users: [
-      {
-        id: '',
-        sex: '',
-        name: '',
-        age: 0,
-        answers: {
-          1: 20,
-          2: 40,
-          3: 0,
-          4: 0,
-          5: 0,
-        },
-      },
-    ],
+    sex: '',
+    name: '',
+    age: 0,
+    answers: {
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+    },
   })
+
+  const findMax = obj => {
+    return Object.keys(obj).reduce((a, b) => (obj[a] > obj[b] ? a : b))
+  }
+
+  console.log(findMax(newUser.answers))
+  console.log(newUser)
 
   const handleSelectChange = e => {
     const value = e.target.id
     setSelect(value)
 
-    if (step <= 1) {
-      setNewUser(prev => ({
-        users: [...prev.users, { [e.target.name]: e.target.value }],
-      }))
+    if (e.target.dataset.answer) {
+      setNewUser(prev => {
+        const prevAnswersValue = prev.answers[e.target.id]
+        const newAnswers = { ...prev.answers, [e.target.id]: Number(prevAnswersValue) + Number(e.target.value) }
+
+        return { ...prev, answers: newAnswers }
+      })
     } else {
       setNewUser(prev => ({
-        users: [...prev.users, { [e.target.id]: e.target.value }],
+        ...prev,
+        [e.target.name]: e.target.value,
       }))
     }
   }
-
-  console.log(newUser)
 
   const stepIncrement = () => {
     setStep(prev => prev + 1)

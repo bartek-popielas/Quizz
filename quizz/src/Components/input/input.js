@@ -1,5 +1,4 @@
 import { InputImg, StyledItem, StyledLabel, StyledMyDiv, StyledQuestionInput } from './input.styles'
-import FemaleIcon from '../../assets/images/female_icon.png'
 import { useContext } from 'react'
 import { StepContext } from '../../context/stepContext'
 
@@ -11,6 +10,7 @@ export default function Input({ el }) {
       <StyledItem>
         <StyledQuestionInput
           id={el.id}
+          data-answer={el.answer}
           type={el.type}
           name={el.name}
           value={el.value}
@@ -18,7 +18,7 @@ export default function Input({ el }) {
           onChange={handleSelectChange}
         />
 
-        <InputImg src={FemaleIcon} alt='logo_johnywick' />
+        <InputImg src={el.image} alt='logo_johnywick' />
         <StyledMyDiv>{el.title}</StyledMyDiv>
       </StyledItem>
     </StyledLabel>

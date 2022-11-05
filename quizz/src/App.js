@@ -4,22 +4,21 @@ import View from './Components/views/view'
 import { useState, useEffect } from 'react'
 import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api'
 
-// const api = new WooCommerceRestApi({
-//   url: 'https://johnywick.pl',
-//   consumerKey: 'ck_5717c4688a0d1fa3465d17508d77423d06d5c33d',
-//   consumerSecret: 'cs_d70676840ad919ff7ff716325933364c57e50f8f',
-//   version: 'wc/v3',
-// })
+const api = new WooCommerceRestApi({
+  url: 'https://johnywick.pl',
+  consumerKey: 'ck_1b78d66f50587ecd285c875cf14277dece240a3c',
+  consumerSecret: 'cs_07a60ee18c37540e88c528624c03e2a2d291978d',
+  version: 'wc/v3',
+})
 
 function App() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
     let fetchProducts = async () => {
-      const response = await fetch('https://johnywick.pl/wp-json/wp/v2/product?categories=272')
-      const json = await response.json()
-
-      setProducts(json)
+      const products = await api.get('products?category=242', { per_page: 50 })
+      console.log(products)
+      setProducts(products.data)
     }
 
     fetchProducts().catch(err => console.log(err))
@@ -37,7 +36,7 @@ function App() {
 
             return (
               <div key={yoast.title}>
-                <img src={image.url} alt='' />
+                <img style={{ width: '50px', height: '50px' }} src={image.url} alt='' />
                 <p>{yoast.title}</p>
               </div>
             )
