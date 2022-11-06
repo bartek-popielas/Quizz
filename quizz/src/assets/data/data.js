@@ -241,7 +241,8 @@ export const Data = {
     },
     {
       headerTitle: `6. Jaką atmosferę najbardziej lubisz w swoim domu?`,
-      buttonTitle: 'Jeszcze coś?',
+      buttonTitle: 'Hmm...',
+      sumUp: true,
       qInput: [
         {
           id: 1,
@@ -289,6 +290,9 @@ export const Data = {
           title: 'Spokojnie',
         },
       ],
+    },
+    {
+      headerTitle: `Daj mi się chwilę zastanowić, a powiem Ci kim jesteś`,
     },
   ],
 }

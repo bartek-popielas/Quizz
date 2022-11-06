@@ -22,13 +22,6 @@ export default function View() {
     },
   })
 
-  const findMax = obj => {
-    return Object.keys(obj).reduce((a, b) => (obj[a] > obj[b] ? a : b))
-  }
-
-  console.log(findMax(newUser.answers))
-  console.log(newUser)
-
   const handleSelectChange = e => {
     const value = e.target.id
     setSelect(value)
@@ -53,10 +46,14 @@ export default function View() {
     setSelect('')
   }
 
+  const findMax = obj => {
+    return Object.keys(obj).reduce((a, b) => (obj[a] > obj[b] ? a : b))
+  }
+
   return (
     <Fragment>
       <GlobalStyles />
-      <StepContext.Provider value={{ step, stepIncrement, select, handleSelectChange }}>
+      <StepContext.Provider value={{ step, stepIncrement, select, handleSelectChange, newUser, findMax }}>
         <Container>
           <Content />
           <StepInfo />

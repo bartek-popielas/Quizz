@@ -7,6 +7,7 @@ import { StyledContent, ContentImg, ContentP } from './content.styles'
 import { StepContext } from '../../context/stepContext'
 import { Data } from '../../assets/data/data'
 import ContentPic from '../../assets/images/content_pic300.png'
+import SumUpButton from '../../Components/button/sumUpButton'
 
 export default function Content() {
   const { step } = useContext(StepContext)
@@ -21,7 +22,8 @@ export default function Content() {
           <ContentP>{view.pText}</ContentP>
           {view.sexInput && <Select inputs={view.sexInput} />}
           {view.qInput && <QuestionSelect inputs={view.qInput} />}
-          <Button title={view.buttonTitle} />
+
+          {view.sumUp ? <SumUpButton title={view.buttonTitle} /> : <Button title={view.buttonTitle} />}
         </StyledContent>
       )
     }
