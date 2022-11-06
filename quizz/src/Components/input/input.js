@@ -12,6 +12,7 @@ export default function Input({ el }) {
           id={el.id}
           data-answer={el.answer}
           type={el.type}
+          data-num={el.num}
           name={el.name}
           value={el.value}
           checked={select === el.id}

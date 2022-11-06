@@ -9,21 +9,22 @@ import { StepContext } from '../../context/stepContext'
 export default function View() {
   const [step, setStep] = useState(0)
   const [select, setSelect] = useState('')
+  const [result, setResult] = useState(0)
   const [newUser, setNewUser] = useState({
     sex: '',
     name: '',
     age: 0,
     answers: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-      5: 0,
+      240: 0,
+      241: 0,
+      244: 0,
+      242: 0,
+      243: 0,
     },
   })
 
   const handleSelectChange = e => {
-    const value = e.target.id
+    const value = e.target.dataset.num
     setSelect(value)
 
     if (e.target.dataset.answer) {
@@ -50,13 +51,17 @@ export default function View() {
     return Object.keys(obj).reduce((a, b) => (obj[a] > obj[b] ? a : b))
   }
 
+  const res = findMax(newUser.answers)
+
   return (
     <Fragment>
       <GlobalStyles />
-      <StepContext.Provider value={{ step, stepIncrement, select, handleSelectChange, newUser, findMax }}>
+      <StepContext.Provider
+        value={{ step, stepIncrement, select, handleSelectChange, newUser, setSelect, res, result, setResult }}
+      >
         <Container>
           <Content />
-          <StepInfo />
+          {step < 7 ? <StepInfo /> : null}
         </Container>
       </StepContext.Provider>
     </Fragment>

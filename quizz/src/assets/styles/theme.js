@@ -15,4 +15,5 @@ export const Colors = {
   gray: '#C9D1D9',
   warningBackground: '#fff3cd',
   warningTxtColor: '#856404',
+  blue: '#4169E1',
 }
