@@ -17,3 +17,10 @@ export const Colors = {
   warningTxtColor: '#856404',
   blue: '#4169E1',
 }
+
+export const LoadingColors = {
+  colorBlue: '#00a7ce',
+  colorGreen: '#72c45a',
+  colorPink: '#f963a3',
+  colorYellow: '#ffd15b',
+}

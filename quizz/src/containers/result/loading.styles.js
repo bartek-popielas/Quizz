@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import { Colors } from '../../assets/styles/theme'
+import { LoadingColors } from '../../assets/styles/theme'
 
 export const LoadingDiv = styled.div`
 
     position: relative;
     width: 0;
     height: 0;
-    margin: 4em auto;
+    margin: 7em auto;
     animation: anim-rotate 1.2s infinite ease;
+    
     
 
     &:before,
@@ -25,16 +26,16 @@ export const LoadingDiv = styled.div`
     }
 
     &::before {
-      background: ${Colors.black};
+      background: ${LoadingColors.colorBlue};
       transform: translate(-.95em, -.95em) scale(1);
-      box-shadow: 1.9em 1.9em 0 ${Colors.gray};
+      box-shadow: 1.9em 1.9em 0 ${LoadingColors.colorGreen};
       animation: anim-1-2 1.8s infinite ease;
     }
 
     &:after {
-      background: ${Colors.primary};
+      background: ${LoadingColors.colorPink};
       transform: translate(.95em, -.95em) scale(1);
-      box-shadow: -1.9em 1.9em 0 ${Colors.blue};
+      box-shadow: -1.9em 1.9em 0 ${LoadingColors.colorYellow};
       animation: anim-3-4 1.8s infinite ease;
     }
   }

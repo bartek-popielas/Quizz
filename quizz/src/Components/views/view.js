@@ -21,6 +21,7 @@ export default function View() {
       242: 0,
       243: 0,
     },
+    // product: '',
   })
 
   const handleSelectChange = e => {
@@ -41,6 +42,13 @@ export default function View() {
       }))
     }
   }
+  //
+  // const handleProduct = e => {
+  //   setNewUser(prev => ({
+  //     ...prev,
+  //     [e.target.name]: e.target.href,
+  //   }))
+  // }
 
   const stepIncrement = () => {
     setStep(prev => prev + 1)
@@ -57,11 +65,22 @@ export default function View() {
     <Fragment>
       <GlobalStyles />
       <StepContext.Provider
-        value={{ step, stepIncrement, select, handleSelectChange, newUser, setSelect, res, result, setResult }}
+        value={{
+          step,
+          stepIncrement,
+          select,
+          handleSelectChange,
+          newUser,
+          setSelect,
+          res,
+          result,
+          setResult,
+          // handleProduct,
+        }}
       >
         <Container>
           <Content />
-          {step < 7 ? <StepInfo /> : null}
+          {step < 8 ? <StepInfo /> : null}
         </Container>
       </StepContext.Provider>
     </Fragment>

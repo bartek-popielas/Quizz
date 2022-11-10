@@ -6,18 +6,21 @@ import { StepContext } from '../../context/stepContext'
 import Loading from './loading'
 
 export default function Result() {
-  const { result } = useContext(StepContext)
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const { result } = useContext(StepContext)
 
-  setTimeout(() => {
-    setLoading(false)
-  }, 10000)
+  // const { handleProduct, newUser } = useContext(StepContext)
+
+  useEffect(() => {
+    if (Array.isArray(products) && products.length > 0) {
+      setLoading(false)
+    }
+  }, [products])
 
   useEffect(() => {
     let fetchProducts = async () => {
       const products = await api.get(`products?category=${result}`, { per_page: 50 })
-      console.log(products)
       setProducts(products.data)
     }
 
@@ -39,11 +42,13 @@ export default function Result() {
                 <ProductImg style={{ width: '150px', height: '150px' }} src={image.url} alt='' />
                 <ProductName>{product.name}</ProductName>
                 {product.has_options === true ? (
-                  <ProductPrice>od {product.price}</ProductPrice>
+                  <ProductPrice>od {product.price} ZŁ</ProductPrice>
                 ) : (
-                  <ProductPrice>{product.price}</ProductPrice>
+                  <ProductPrice>{product.price} ZŁ</ProductPrice>
                 )}
-                <ProductLink href={product.permalink}>Przejdź do produktu</ProductLink>
+                <ProductLink name='product' href={product.permalink} target='_blank'>
+                  Przejdź do produktu
+                </ProductLink>
               </ProductBox>
             )
           })}

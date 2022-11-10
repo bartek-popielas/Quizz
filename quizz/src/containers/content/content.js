@@ -23,11 +23,12 @@ export default function Content() {
           <ContentP>{view.pText}</ContentP>
           {view.sexInput && <Select inputs={view.sexInput} />}
           {view.qInput && <QuestionSelect inputs={view.qInput} />}
-          {step < 6 ? <Button title={view.buttonTitle} /> : null}
+          {step < 7 ? <Button title={view.buttonTitle} /> : null}
           {result !== 0 ? <Result /> : null}
           {view.sumUp ? <SumUpButton title={view.buttonTitle} /> : null}
         </StyledContent>
       )
     }
+    return false
   })
 }

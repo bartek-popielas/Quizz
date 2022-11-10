@@ -9,7 +9,7 @@ export default function StepInfo() {
   const { views } = Data
 
   const filtered = views.filter(view => {
-    return !view.headerTitle.includes('Daj mi się chwilę zastanowić, a powiem Ci kim jesteś')
+    return !view.headerTitle.includes('Zaraz coś dla Ciebie wybiorę...')
   })
 
   return (
