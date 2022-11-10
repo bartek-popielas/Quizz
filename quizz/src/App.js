@@ -1,16 +1,9 @@
-import './App.css';
-
-import React, { Fragment } from "react";
-import { GlobalStyles } from "./assets/styles/globalStyles";
-import Button from "./Components/button/button";
+import './App.css'
+import React from 'react'
+import View from './Components/views/view'
 
 function App() {
-  return (
-    <Fragment>
-      <GlobalStyles/>
-      <Button>Kliknij mnie!</Button>
-    </Fragment>
-  );
+  return <View />
 }
 
-export default App;
+export default App

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components"
 
 import {normalize} from "./normalize"
+import LatoWoff from "../fonts/Lato-Regular.woff"
+import LatoWoff2 from "../fonts/Lato-Regular.woff2"
 
 export const GlobalStyles = createGlobalStyle`
   ${normalize}
@@ -19,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-weight: 400;
     font-size: 1.4rem;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   
   h1,h2,h3,h4,h5,h6 {
@@ -29,5 +31,12 @@ export const GlobalStyles = createGlobalStyle`
   a, button {
     font-weight: 600;
   }
-`
+  
+  @font-face {
+    font-family: 'Lato';
+    src: url(${LatoWoff2}) format ('woff2'),
+         url(${LatoWoff}) format ('woof')
+  }
+`;
+
 
