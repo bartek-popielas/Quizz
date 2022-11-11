@@ -15,11 +15,10 @@ export default function Input({ el }) {
           data-num={el.num}
           name={el.name}
           value={el.value}
-          checked={select === el.id}
           onChange={handleSelectChange}
         />
 
-        <InputImg src={el.image} alt='logo_johnywick' />
+        <InputImg src={el.image} alt='ikona_w_inpucie' />
         <StyledMyDiv>{el.title}</StyledMyDiv>
       </StyledItem>
     </StyledLabel>

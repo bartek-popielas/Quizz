@@ -14,7 +14,7 @@ export const StyledLabel = styled.label`
   margin: 5px 0;
 
   &:nth-child(${props => props.inputNum}) {
-    background: ${Colors.gray};
+    background: ${Colors.selectGradient};
     color: ${Colors.white};
     font-weight: 700;
   }

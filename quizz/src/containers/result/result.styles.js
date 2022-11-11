@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { device } from '../../assets/styles/theme'
+import { Colors } from '../../assets/styles/theme'
 
 export const ResultWrapper = styled.div`
   @media ${device.tablet} {
@@ -20,7 +21,7 @@ export const ProductImg = styled.img``
 export const ProductName = styled.h2`
   text-align: center;
   font-size: 1.7rem;
-  margin: 0.5rem 0;
+  margin: 0.5rem 2.5rem;
 `
 export const ProductPrice = styled.p`
   font-weight: 700;
@@ -32,9 +33,9 @@ export const ProductLink = styled.a`
 
   text-decoration: none;
 
-  color: #fff;
-  background-color: #fcb316;
-  font-size: 16px;
+  color: ${Colors.white};
+  background-color: ${Colors.primary};
+  font-size: 1.2rem;
   padding: 10px 20px;
   border: none;
   font-weight: 500;

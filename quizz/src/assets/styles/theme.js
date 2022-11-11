@@ -16,6 +16,7 @@ export const Colors = {
   warningBackground: '#fff3cd',
   warningTxtColor: '#856404',
   blue: '#4169E1',
+  selectGradient: 'linear-gradient(90deg, rgba(231,239,249,1) 0%, rgba(207,214,230,1) 100%)',
 }
 
 export const LoadingColors = {

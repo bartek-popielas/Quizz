@@ -26,7 +26,11 @@ export default function View() {
 
   const handleSelectChange = e => {
     const value = e.target.dataset.num
-    setSelect(value)
+
+    if (e.target.id === 'name' || e.target.id === 'age') {
+    } else {
+      setSelect(value)
+    }
 
     if (e.target.dataset.answer) {
       setNewUser(prev => {

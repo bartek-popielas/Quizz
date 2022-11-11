@@ -1,16 +1,16 @@
-import styled from "styled-components";
-import { device } from "../../assets/styles/theme";
+import styled from 'styled-components'
+import { device } from '../../assets/styles/theme'
 
 export const StyledContent = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 export const ContentImg = styled.img`
-  margin: 60px 0 30px 0;
-`;
+  padding: 30px 0;
+`
 
 export const ContentP = styled.p`
   text-align: center;
@@ -20,4 +20,4 @@ export const ContentP = styled.p`
   @media ${device.tablet} {
     max-width: 350px;
   }
-`;
+`

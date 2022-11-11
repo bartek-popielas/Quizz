@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {device} from "../../assets/styles/theme";
+import styled from 'styled-components'
+import { device } from '../../assets/styles/theme'
 
 export const GlobalContainer = styled.div`
   width: 100vw;
@@ -9,9 +9,9 @@ export const GlobalContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
+
   @media ${device.tablet} {
     width: 50vw;
     padding-top: 20px;
   }
-`;
+`

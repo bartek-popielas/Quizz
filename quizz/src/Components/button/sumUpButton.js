@@ -12,8 +12,8 @@ export default function SumUpButton({ title }) {
       setResult(res)
       stepIncrement(step)
 
-      const fetchProduct = async () => {
-        await addDoc(collection(db, 'user_answers'), {
+      const addUser = async () => {
+        await addDoc(collection(db, 'users_answers'), {
           sex: newUser.sex,
           name: newUser.name,
           age: newUser.age,
@@ -28,7 +28,7 @@ export default function SumUpButton({ title }) {
         })
       }
 
-      fetchProduct().catch(err => console.log(err))
+      addUser().catch(err => console.log(err))
     }
   }
 
