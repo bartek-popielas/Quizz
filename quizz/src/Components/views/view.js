@@ -10,6 +10,8 @@ export default function View() {
   const [step, setStep] = useState(0)
   const [select, setSelect] = useState('')
   const [result, setResult] = useState(0)
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
   const [newUser, setNewUser] = useState({
     sex: '',
     name: '',
@@ -21,7 +23,7 @@ export default function View() {
       242: 0,
       243: 0,
     },
-    // product: '',
+    product: '',
   })
 
   const handleSelectChange = e => {
@@ -65,6 +67,10 @@ export default function View() {
 
   const res = findMax(newUser.answers)
 
+  console.log(step)
+  console.log(products)
+  console.log(result)
+
   return (
     <Fragment>
       <GlobalStyles />
@@ -75,11 +81,16 @@ export default function View() {
           select,
           handleSelectChange,
           newUser,
+          setNewUser,
           setSelect,
           res,
           result,
           setResult,
           // handleProduct,
+          products,
+          setProducts,
+          loading,
+          setLoading,
         }}
       >
         <Container>

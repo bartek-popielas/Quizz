@@ -1,18 +1,13 @@
 export const Data = {
   views: [
     {
-      headerTitle: `Pozwól, że poznamy się lepiej.
-                        Chciałbym zadać Ci kilka
-                        pytań, dzięki którym dowiem
-                        się, co uszczęśliwia Cię
-                        najbardziej!`,
+      headerTitle: `Zastanawiasz się jaki zapach świecy pasuje do Ciebie najbardziej? W ciągu 2 minut znajdę odpowiedź!`,
       imgAlt: 'świeca sojowa w rękach',
-      pText: `Poświęć mi zaledwie 2 minuty i
-                        odpowiadając na 5 pytań dowiedz się jakie zapachy są dla Ciebie!`,
+      pText: `Przygotowałem dla Ciebie 7 pytań, które pomogą mi wybrać świece idealnie pasujące do Twojej osobowości!`,
       buttonTitle: 'Zaczynamy!',
     },
     {
-      headerTitle: '1. Powiedz mi kim jesteś i jak masz na imię?',
+      headerTitle: '1. Kim jesteś i jak masz na imię? ',
       buttonTitle: 'Zapytaj jeszcze o coś',
       sexInput: [
         {
@@ -36,8 +31,8 @@ export const Data = {
       ],
     },
     {
-      headerTitle: `2. Jaka jest Twoja ulubiona forma spędzania wolnego czasu?`,
-      buttonTitle: 'Jeszcze coś?',
+      headerTitle: `2. Twoja ulubiona forma spędzania czasu to: `,
+      buttonTitle: 'Dalej',
       qInput: [
         {
           id: 241,
@@ -92,10 +87,8 @@ export const Data = {
       ],
     },
     {
-      headerTitle: `3. Jeśli możesz wyruszyć w podróż 
-                        gdziekolwiek zechcesz. Jakie miejsce
-                        wybierzesz?`,
-      buttonTitle: 'Jeszcze coś?',
+      headerTitle: `3. Wyobraź sobie , że możesz wybrać się w podróż gdziekolwiek zechcesz! Co to będzie za miejsce?`,
+      buttonTitle: 'Dalej',
       qInput: [
         {
           id: 242,
@@ -150,8 +143,8 @@ export const Data = {
       ],
     },
     {
-      headerTitle: `4. Powiedz mi jaka cecha charakteru najlepiej Cię opisuję?`,
-      buttonTitle: 'Jeszcze coś?',
+      headerTitle: `4. Wybierz określenie, które najlepiej Cię opisuje `,
+      buttonTitle: 'Dalej',
       qInput: [
         {
           id: 244,
@@ -206,8 +199,8 @@ export const Data = {
       ],
     },
     {
-      headerTitle: `5. Jaki styl najlepiej do Ciebie pasuje?`,
-      buttonTitle: 'Jeszcze coś?',
+      headerTitle: `5. Jaki styl lubisz? `,
+      buttonTitle: 'Dalej',
       qInput: [
         {
           id: 242,
@@ -227,7 +220,7 @@ export const Data = {
           name: 'style',
           value: 8,
           image: `${process.env.PUBLIC_URL}/fitness_girl.png`,
-          title: 'Sportowiec',
+          title: 'Sportowy',
         },
         {
           id: 240,
@@ -247,7 +240,7 @@ export const Data = {
           name: 'style',
           value: 8,
           image: `${process.env.PUBLIC_URL}/glam.png`,
-          title: 'Glam',
+          title: 'Glamour',
         },
         {
           id: 243,
@@ -262,8 +255,8 @@ export const Data = {
       ],
     },
     {
-      headerTitle: `6. Jaką porę roku lubisz najbardziej?`,
-      buttonTitle: 'Jeszcze coś?',
+      headerTitle: `6. Jaka jest Twoja ulubiona pora roku?`,
+      buttonTitle: 'Dalej',
       qInput: [
         {
           id: 240,
@@ -318,8 +311,8 @@ export const Data = {
       ],
     },
     {
-      headerTitle: `7. Jaką atmosferę najbardziej lubisz w swoim domu?`,
-      buttonTitle: 'Hmm...',
+      headerTitle: `7. Twoje wymarzone mieszanie powinno być:`,
+      buttonTitle: 'Dalej',
       sumUp: true,
       qInput: [
         {
@@ -340,7 +333,7 @@ export const Data = {
           name: 'vibe',
           value: 9,
           image: `${process.env.PUBLIC_URL}/relax.png`,
-          title: 'Relaksacyjnie',
+          title: 'Relaksacyjne',
         },
         {
           id: 241,
@@ -350,7 +343,7 @@ export const Data = {
           name: 'vibe',
           value: 9,
           image: `${process.env.PUBLIC_URL}/energy.png`,
-          title: 'Energicznie',
+          title: 'Energiczne',
         },
         {
           id: 242,
@@ -360,7 +353,7 @@ export const Data = {
           name: 'vibe',
           value: 9,
           image: `${process.env.PUBLIC_URL}/chill.png`,
-          title: 'Odprężająco',
+          title: 'Odprężające',
         },
         {
           id: 240,
@@ -370,12 +363,15 @@ export const Data = {
           name: 'vibe',
           value: 9,
           image: `${process.env.PUBLIC_URL}/cosy.png`,
-          title: 'Przytulnie',
+          title: 'Przytulne',
         },
       ],
     },
     {
       headerTitle: `Zaraz coś dla Ciebie wybiorę...`,
+    },
+    {
+      headerTitle: `Zaraz coś dla Ciebie wybiorę1221...`,
     },
   ],
 }

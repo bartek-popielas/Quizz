@@ -9,9 +9,10 @@ import QuestionSelect from '../../Components/questionSelect/questionSelect'
 import SumUpButton from '../../Components/button/sumUpButton'
 import Result from '../result/result'
 import ContentPic from '../../assets/images/content_pic300.png'
+import Loading from '../result/loading'
 
 export default function Content() {
-  const { step, result } = useContext(StepContext)
+  const { step, result, loading } = useContext(StepContext)
   const { views } = Data
 
   return views.map((view, i) => {
@@ -24,7 +25,8 @@ export default function Content() {
           {view.sexInput && <Select inputs={view.sexInput} />}
           {view.qInput && <QuestionSelect inputs={view.qInput} />}
           {step < 7 ? <Button title={view.buttonTitle} /> : null}
-          {result !== 0 ? <Result /> : null}
+          {step === 8 && loading ? <Loading /> : null}
+          {step === 9 ? <Result /> : null}
           {view.sumUp ? <SumUpButton title={view.buttonTitle} /> : null}
         </StyledContent>
       )

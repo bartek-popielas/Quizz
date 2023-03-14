@@ -8,13 +8,13 @@ export default function StepInfo() {
   const { step } = useContext(StepContext)
   const { views } = Data
 
-  const filtered = views.filter(view => {
-    return !view.headerTitle.includes('Zaraz coś dla Ciebie wybiorę...')
-  })
+  // const filtered = views.filter(view => {
+  //   return !view.headerTitle.includes('Zaraz coś dla Ciebie wybiorę...')
+  // })
 
   return (
     <StyledStepInfo>
-      {filtered.map((view, i) => (
+      {views.map((view, i) => (
         <StyledStep key={'Step#' + i + 1} num={step === i} />
       ))}
     </StyledStepInfo>

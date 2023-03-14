@@ -4,56 +4,62 @@ import { ResultWrapper, ProductBox, ProductImg, ProductPrice, ProductName, Produ
 import { useContext } from 'react'
 import { StepContext } from '../../context/stepContext'
 import Loading from './loading'
+import { addDoc, collection } from 'firebase/firestore'
+import { db } from '../../assets/services/firebase'
 
 export default function Result() {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const { result } = useContext(StepContext)
+  const { result, newUser, setNewUser, stepIncrement, step, products, setProducts } = useContext(StepContext)
 
   // const { handleProduct, newUser } = useContext(StepContext)
 
-  useEffect(() => {
-    if (Array.isArray(products) && products.length > 0) {
-      setLoading(false)
+  const HandleClick = e => {
+    e.preventDefault()
+
+    //loadre na button
+    setNewUser(prev => ({
+      ...prev,
+      [e.target.name]: e.target.href,
+    }))
+
+    const addUser = async () => {
+      const ref = await addDoc(collection(db, 'users_answers'), newUser)
+      console.log(ref.id)
+
+      //ID dodać w cookie
+      //zmniejszyć zdjęcia
+      //akutalizacja w firebase
     }
-  }, [products])
+
+    addUser().catch(err => console.log(err))
+  }
 
   useEffect(() => {
-    let fetchProducts = async () => {
-      const products = await api.get(`products?category=${result}`, { per_page: 50 })
-      setProducts(products.data)
-    }
-
-    fetchProducts().catch(err => console.log(err))
-  }, [result])
+    console.log(newUser)
+  }, [newUser])
 
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <ResultWrapper>
-          {products.map(product => {
-            const yoast = product.yoast_head_json
-            const image = yoast.og_image[0]
+      <ResultWrapper>
+        {products.map(product => {
+          const yoast = product.yoast_head_json
+          const image = yoast.og_image[0]
 
-            return (
-              <ProductBox key={yoast.title}>
-                <ProductImg style={{ width: '150px', height: '150px' }} src={image.url} alt='' />
-                <ProductName>{product.name}</ProductName>
-                {product.has_options === true ? (
-                  <ProductPrice>od {product.price} ZŁ</ProductPrice>
-                ) : (
-                  <ProductPrice>{product.price} ZŁ</ProductPrice>
-                )}
-                <ProductLink name='product' href={product.permalink} target='_blank'>
-                  Przejdź do produktu
-                </ProductLink>
-              </ProductBox>
-            )
-          })}
-        </ResultWrapper>
-      )}
+          return (
+            <ProductBox key={yoast.title}>
+              <ProductImg style={{ width: '150px', height: '150px' }} src={image.url} alt='' />
+              <ProductName>{product.name}</ProductName>
+              {product.has_options === true ? (
+                <ProductPrice>od {product.price} ZŁ</ProductPrice>
+              ) : (
+                <ProductPrice>{product.price} ZŁ</ProductPrice>
+              )}
+              <ProductLink name='product' href={product.permalink} onClick={HandleClick} target='_blank'>
+                Przejdź do produktu
+              </ProductLink>
+            </ProductBox>
+          )
+        })}
+      </ResultWrapper>
     </>
   )
 }
